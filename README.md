@@ -15,7 +15,7 @@ git clone git@github.com:mosiichuk/otp.git
 ![img_2.png](img_2.png)
 
 ```
-docker run -p 8080:8080 -e SMTP_USER_NAME= -e SMTP_USER_PASSWORD= otp/otp
+docker run -p 8080:8080 -d -e SMTP_USER_NAME= -e SMTP_USER_PASSWORD= otp/otp
 ```
 
 3) Import Postman collection `otp.postman_collection.json` and environment `otp.postman_collection.json` from the root of the project. Set `otp` environment as active in Postman.
