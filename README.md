@@ -18,7 +18,7 @@ git clone git@github.com:mosiichuk/otp.git
 docker run -p 8080:8080 -d -e SMTP_USER_NAME= -e SMTP_USER_PASSWORD= otp/otp
 ```
 
-3) Import Postman collection `otp.postman_collection.json` and environment `otp.postman_collection.json` from the root of the project. Set `otp` environment as active in Postman.
+3) Import Postman collection `otp.postman_collection.json` and environment `otp.postman_environment.json` from the root of the project. Set `otp` environment as active in Postman.
 
 4) To login via email use this endpoint ![img.png](img.png). There is already test user to use: otp-test-user@mailinator.com. Use this link to open users mail https://www.mailinator.com/v4/public/inboxes.jsp?msgid=otp-test-user-1614763029-697303&to=otp-test-user.
 
