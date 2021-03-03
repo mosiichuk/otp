@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a83ba1c9-e006-4615-bde8-950254483677",
+		"_postman_id": "2930c122-bedf-4141-b28e-e804fc040643",
 		"name": "otp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -49,7 +49,7 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": ""
+							"value": "1"
 						}
 					]
 				}
@@ -63,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Doe\",\n    \"dateOfBirth\": \"2020-09-09\",\n    \"maritalStatus\": \"1NOT_MARRIED\",\n    \"email\": \"john1.do1e1@email.com\"\n}",
+					"raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Doe\",\n    \"dateOfBirth\": \"2020-09-09\",\n    \"maritalStatus\": \"NOT_MARRIED\",\n    \"email\": \"user@example.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -103,7 +103,7 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "6"
+							"value": "1"
 						}
 					]
 				}
@@ -138,7 +138,7 @@
 					"variable": [
 						{
 							"key": "userId",
-							"value": "111"
+							"value": "1"
 						}
 					]
 				}
@@ -152,7 +152,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"vocawo9210@netjook.com\"\n}",
+					"raw": "{\n    \"email\": \"otp-test-user@mailinator.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -176,12 +176,23 @@
 		},
 		{
 			"name": "Validate OTP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"BEARER_TOKEN\", pm.response.headers.get(\"token\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userEmail\": \"vocawo9210@netjook.com\",\n    \"otp\": \"UK4VMFSD\"\n}",
+					"raw": "{\n    \"userEmail\": \"otp-test-user@mailinator.com\",\n    \"otp\": \"J6RMQBS7\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -202,6 +213,36 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{BEARER_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
