@@ -1,3 +1,8 @@
+Clone the repository: 
+```
+git clone git@github.com:mosiichuk/otp.git
+```
+
 # Launch instructions
 1) Run script to create Docker image: 
 ```
