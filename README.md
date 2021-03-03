@@ -1,7 +1,7 @@
 # Launch instructions
-1) Run command to create Docker image: 
+1) Run script to create Docker image: 
 ```
-docker build -t otp/otp .
+./docker-build.sh
 ```
 
 2) Start Docker container. You should provide values to variables `SMTP_USER_NAME` and `SMTP_USER_PASSWORD`, 
